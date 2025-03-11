@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const vibrationToggle = document.getElementById('vibration-toggle');
     const glassTypeSelect = document.getElementById('glass-type');
     const container = document.querySelector('.container');
+    const fetchSounds = async () => {
+    try {
+        // 直接使用备选音效，不再尝试加载
+        handleAudioError();
+        hideLoading();
+    } catch (e) {
+        handleAudioError();
+        hideLoading();
+    }
+};
     
     // 创建玻璃实例
     let glass = new Glass(canvas, {
