@@ -17,8 +17,8 @@ if (typeof window !== 'undefined') {
     
     // 音效文件URL (来自免费音效库)
     const soundUrls = {
-        'glass-break.mp3': 'https://freesound.org/data/previews/412/412095_7836087-lq.mp3',
-        'glass-shatter.mp3': 'https://freesound.org/data/previews/444/444629_6253054-lq.mp3'
+        'glass-break.mp3': 'https://cdn.freesound.org/previews/331/331925_4426514-lq.mp3',
+        'glass-shatter.mp3': 'https://cdn.freesound.org/previews/390/390734_6456158-lq.mp3'
     };
     
     // 创建目录
