@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>破碎玻璃解压游戏</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+</head>
+<body>
+    <div class="container">
+        <h1>破碎玻璃解压游戏</h1>
+        <div class="game-area">
+            <canvas id="game-canvas"></canvas>
+            <div class="instructions">点击或滑动屏幕来打碎玻璃</div>
+        </div>
+        <div class="controls">
+            <button id="reset-button">重置</button>
+            <button id="fullscreen-button">全屏</button>
+            <button id="vibration-toggle" class="active">振动: 开</button>
+        </div>
+        <div class="settings">
+            <div class="setting-group">
+                <label for="glass-type">玻璃类型:</label>
+                <select id="glass-type">
+                    <option value="normal">普通玻璃</option>
+                    <option value="thick">厚玻璃</option>
+                    <option value="tinted">有色玻璃</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed', err));
+            });
+        }
+    </script>
+    
+    <!-- 引入物理引擎 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    
+    <!-- 游戏逻辑 -->
+    <script src="glass.js"></script>
+    <script src="main.js"></script>
+</body>
+</html> 
