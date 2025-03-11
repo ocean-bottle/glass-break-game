@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const vibrationToggle = document.getElementById('vibration-toggle');
     const glassTypeSelect = document.getElementById('glass-type');
     const container = document.querySelector('.container');
+    // 创建玻璃实例
+    let glass = new Glass(canvas, {
+        maxShards: 50,      // 更多碎片以增加视觉效果
+        initialVelocity: 20 // 增加初始速度使碎片飞得更远
+    });
    const fetchSounds = async () => {
     try {
         // 直接使用备选音效，不再尝试加载
