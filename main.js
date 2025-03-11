@@ -157,15 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     };
     
-    // 尝试预加载音频文件，如果失败则使用备选音效
     const preloadAudio = () => {
-        const breakSound = new Audio();
-        breakSound.src = 'assets/sounds/glass-break.mp3';
-        breakSound.addEventListener('error', handleAudioError);
-        
-        // 获取或创建音频文件
-        };
-        
+    console.log('使用内置音效');
+    // 直接使用备选音效
+    handleAudioError();
+    // 立即隐藏加载界面
+    hideLoading();
+};
         fetchSounds();
     };
     
