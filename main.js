@@ -158,12 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     const preloadAudio = () => {
-    console.log('使用内置音效');
-    // 直接使用备选音效
-    handleAudioError();
-    // 立即隐藏加载界面
-    hideLoading();
-};
+        console.log('使用内置音效');
+        // 直接使用备选音效
+        handleAudioError();
+        // 立即隐藏加载界面
+        hideLoading();
+        fetchSounds();
+    };
     
     // 生成音频文件
     const generateAudioFiles = async () => {
