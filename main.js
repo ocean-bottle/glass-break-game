@@ -164,8 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 立即隐藏加载界面
     hideLoading();
 };
-        fetchSounds();
-    };
     
     // 生成音频文件
     const generateAudioFiles = async () => {
