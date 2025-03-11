@@ -164,23 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         breakSound.addEventListener('error', handleAudioError);
         
         // 获取或创建音频文件
-        const fetchSounds = async () => {
-            try {
-                // 检查音频文件是否存在
-                const response = await fetch('assets/sounds/glass-break.mp3', { method: 'HEAD' });
-                if (!response.ok) {
-                    // 音频文件不存在，调用函数生成音频文件
-                    await generateAudioFiles();
-                } else {
-                    // 隐藏加载界面
-                    hideLoading();
-                }
-            } catch (e) {
-                // 无法检查文件或生成音频，使用备选方案
-                handleAudioError();
-                // 隐藏加载界面
-                hideLoading();
-            }
         };
         
         fetchSounds();
